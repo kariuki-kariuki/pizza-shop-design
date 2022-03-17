@@ -1,0 +1,12 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.hero{
+    height: 100vh;
+    background-image: url("/assets/oie_17115424RtWQnZ7.jpg");
+    background-size: cover;
+    background-position: center;
+}
