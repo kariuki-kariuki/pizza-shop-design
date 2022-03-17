@@ -9,4 +9,23 @@
     background-image: url("/assets/oie_17115424RtWQnZ7.jpg");
     background-size: cover;
     background-position: center;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.content{
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    margin: 0;
+}
+
+.line{
+    display: block;
+    height: 30vh;
+    width: 1px;
+    background-color: yellow;
+    margin-left: 20px;
+}
+.design{
+    padding-top: 10vh;
 }
