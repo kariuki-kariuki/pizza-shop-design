@@ -17,7 +17,7 @@
 .content{
     background: rgba(0, 0, 0, 0.5);
     margin: 0;
-    overflow: scroll;
+    overflow: hidden;
 }
 
 .line{
@@ -46,9 +46,6 @@
 }
 
 .info{
-    height: 100%;
-    background-color: blueviolet;
-}
-.info1{
-    height: 100%;
+    height: 60vh;
+    color: yellow;
 }
