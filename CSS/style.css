@@ -11,12 +11,13 @@
     background-position: center;
     padding-top: 3%;
     padding-bottom: 3%;
+    
 }
 
 .content{
-    height: 100%;
     background: rgba(0, 0, 0, 0.5);
     margin: 0;
+    overflow: scroll;
 }
 
 .line{
@@ -42,4 +43,12 @@
 }
 .header {
     padding-top: 30px;
+}
+
+.info{
+    height: 100%;
+    background-color: blueviolet;
+}
+.info1{
+    height: 100%;
 }
