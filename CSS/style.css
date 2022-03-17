@@ -46,6 +46,22 @@
 }
 
 .info{
-    height: 60vh;
+    height: 40vh;
     color: yellow;
+}
+
+.slides{
+    position: relative;
+    display: none;
+}
+
+.text{
+    position: absolute;
+    color: white;
+    top: 20px;
+    left: 30px;
+    font-size: xx-large;
+    padding: 5px;
+    background: linear-gradient(45deg, rgba(204, 102, 255, .5), rgba(255, 255, 0, .5));
+    font-family: 'Smokum', cursive;
 }
