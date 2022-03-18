@@ -17,7 +17,7 @@ let index = 0;
     slider1[index - 1].style.display = "block";
     slider2[index - 1].style.display = "block";
     slider3[index - 1].style.display = "block";
-    setTimeout(slides, 5000)
+    setTimeout(slides, 7000)
     
 })();
 
