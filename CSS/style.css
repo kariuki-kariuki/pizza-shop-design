@@ -53,6 +53,7 @@
 .slides{
     position: relative;
     display: none;
+    width: 100%;
 }
 
 .text{
