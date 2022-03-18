@@ -70,3 +70,28 @@
     color: white;
     padding: 5px;
 }
+
+.order{
+    padding-top: 7vh;
+    padding-bottom: 7vh;
+}
+
+.order header {
+    padding: 40px;
+    color: white;
+}
+
+.bg-base{
+    background: #0F0E0E;
+}
+
+.bg-base-1{
+    background: #191919;
+}
+.bg-base-2{
+    background: #041C32;
+}
+
+.right{
+    float:right;
+}
