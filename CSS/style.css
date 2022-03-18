@@ -21,12 +21,23 @@
 }
 
 .line{
-    display: block;
+    display: inline-block;
     height: 30vh;
     width: 1px;
     background-color: yellow;
-    margin-left: 20px;
 }
+.fb{
+    color: blue;
+}
+
+.ig{
+    color: violet;
+}
+
+.gh{
+    color: white;
+}
+
 .design{
     padding-top: 10vh;
 }
