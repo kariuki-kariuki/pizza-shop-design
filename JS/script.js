@@ -26,6 +26,7 @@ let crust = [
     ["Gluten Free", 100]
 ]
 
+let items = [];
 
 
 Pizza.prototype.price = function () {
@@ -53,6 +54,7 @@ function myModal(pizzaType) {
 }
 function calculate(param, param2) {
     // document.getElementById("modal").style.display = "block";
+    // $("#tbody").empty();
     $("#modal").append(
         '<div class="w3-modal-content col-sm-6"> ' +
         '<header class="w3-main-container text-center bg-dark">' +
@@ -97,6 +99,8 @@ function calculate(param, param2) {
 
     $('form#myform').submit(event => {
         event.preventDefault();
+
+        $("#tbody").empty();
         let toppingVal = $("#toppings").val();
         let pizzaValue = $('#datatype').text();
         let crustVal = $("#crust").val();
@@ -113,20 +117,47 @@ function calculate(param, param2) {
 
         let mypizza = new Pizza(pizzaData, toppingVal, crustVal, quantityVal);
         console.log(mypizza.price());
+        items.push(mypizza);
+        console.log(items)
+        // for(let i = 0; i < items.length; i++){
+        //     $("#tbody").append(
+        //         '<tr>' +
+        //         '<td>' + i.index() + '</td>' +
+        //         '<td><img src="/assets/pizza-ga7513f267_640.jpg" alt="" class="img-fluid tdimg"></td>' +
+        //         '<td>' + pizzaSize[items[i].size][0] + '</td>' +
+        //         '<td>' + tops[items[i].topping][0] + '</td>' +
+        //         '<td>' + crust[items[i].crust][0] + '</td>' +
+        //         '<td>' + items[i].price() + '</td>' +
+        //         '<td><input type="checkbox" name="check" id="check" value= "' + items[i].price() + '"></td>' +
+        //         '</tr>')
+        // }
 
+        items.forEach((item, index) => {
+        
+            $("#tbody").append(
+                '<tr>' +
+                '<td>' + (index + 1) + '</td>' +
+                '<td><img src="/assets/pizza-ga7513f267_640.jpg" alt="" class="img-fluid tdimg"></td>' +
+                '<td>' + pizzaSize[item.size][0] + '</td>' +
+                '<td>' + tops[item.topping][0] + '</td>' +
+                '<td>' + crust[item.crust][0] + '</td>' +
+                '<td>' + item.price() + '</td>' +
+                '<td><input type="checkbox" name="check" id="check" value= "' + item.price() + '"></td>' +
+                '</tr>')
+        });
 
-        $("#tbody").append(
-            '<tr>'+
-                '<td>1</td>'+
-                '<td><img src="/assets/pizza-ga7513f267_640.jpg" alt="" class="img-fluid tdimg"></td>'+
-                '<td>' + pizzaValue +'</td>'+
-                '<td>' + tops[toppingVal][0] +'</td>'+
-                '<td>' + crust[crustVal][0] +'</td>'+
-                '<td>' + mypizza.price() + '</td>'+
-                '<td><input type="checkbox" name="check" id="check"></td>'+
-            '</tr>'
+        // $("#tbody").append(
+        //     '<tr>'+
+        //         '<td>1</td>'+
+        //         '<td><img src="/assets/pizza-ga7513f267_640.jpg" alt="" class="img-fluid tdimg"></td>'+
+        //         '<td>' + pizzaValue +'</td>'+
+        //         '<td>' + tops[toppingVal][0] +'</td>'+
+        //         '<td>' + crust[crustVal][0] +'</td>'+
+        //         '<td>' + mypizza.price() + '</td>'+
+        //         '<td><input type="checkbox" name="check" id="check" value= "' + mypizza.price() + '"></td>'+
+        //     '</tr>'
 
-        );
+        // );
 
         reset();
     })
