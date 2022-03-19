@@ -127,3 +127,9 @@
     background: black;
     border-radius: 2px;
 }
+
+.tdimg{
+    width: 10vh;
+    border-radius: 50%;
+    height: 10vh;
+}
