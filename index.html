@@ -191,7 +191,44 @@
                 </div>
             </div>
 
-            
+            <div class="w3-modal card w3-black w3-text-black" id="01">
+                <div class="w3-modal-content pb-4">
+                    <header class="w3-main-container w3-teal">
+                      <h1>Medium</h1>  
+                        <span onclick="document.getElementById('01').style.display='none'"
+                            class="w3-button w3-display-topright">&times;</span>
+                    </header>
+                    <div class="w3-container">
+                        <form class="w3-container">
+                            <div class="w3-main-container">
+                                <label for="toppings">Choose Topping</label>
+                                <select name="toppings" class="w3-input" id="toppings">
+                                    <option value="0">Red Pepper</option>
+                                    <option value="1">Cauli Flower</option>
+                                    <option value="2">Tomatoes</option>
+                                    <option value="2">Butternut Squash</option>
+                                </select>
+                            </div>
+
+                            <div class="w3-main-container">
+                                <label for="crust">Choose crust</label>
+                                <select class="w3-input" name="crust" id="crust">
+                                    <option value="0">Cripsy</option>
+                                    <option value="1">Stuffed</option>
+                                    <option value="2">Gluten-Free</option>
+                                </select>
+                                
+                                <label for="quantity">Choose Quantity</label>
+                                <input type="number" class="w3-input w3-border" placeholder="choose quantity">
+                                <br>
+                            </div>
+
+                            <input type="submit" value="Order" class="btn btn-primary">
+                        </form>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
     <script src="JS/jquery-3.6.0.min.js"></script>
