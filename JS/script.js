@@ -13,9 +13,19 @@ let pizzaSize = [
     ['large', 1200]
 ]
 
-let tops = [100, 70, 120, 150]
+let tops = [
+    ["Red Paper", 100],
+    ["Cauli Flower", 70],
+    ["Tomatoes ", 120],
+    ["Butternut Squash", 150]
+]
 
-let crust = [50, 70, 90, 100]
+let crust = [
+    ["Cripsy", 50],
+    ["Stuffed", 70],
+    ["Gluten Free", 100]
+]
+
 
 
 Pizza.prototype.price = function () {
@@ -23,7 +33,7 @@ Pizza.prototype.price = function () {
     let myTop = this.size;
     let myCrust = this.crust;
     let pizzaNo = this.amt;
-    let myPrice = (pizzaSize[mySize][1] + tops[myTop] + crust[myCrust]) * pizzaNo;
+    let myPrice = (pizzaSize[mySize][1] + tops[myTop][1] + crust[myCrust][1]) * pizzaNo;
     return myPrice
 }
 
@@ -104,6 +114,19 @@ function calculate(param, param2) {
         let mypizza = new Pizza(pizzaData, toppingVal, crustVal, quantityVal);
         console.log(mypizza.price());
 
+
+        $("#tbody").append(
+            '<tr>'+
+                '<td>1</td>'+
+                '<td><img src="/assets/pizza-ga7513f267_640.jpg" alt="" class="img-fluid tdimg"></td>'+
+                '<td>' + pizzaValue +'</td>'+
+                '<td>' + tops[toppingVal][0] +'</td>'+
+                '<td>' + crust[crustVal][0] +'</td>'+
+                '<td>' + mypizza.price() + '</td>'+
+                '<td><input type="checkbox" name="check" id="check"></td>'+
+            '</tr>'
+
+        );
 
         reset();
     })
