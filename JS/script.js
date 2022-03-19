@@ -35,7 +35,7 @@ Pizza.prototype.price = function () {
     let myTop = this.size;
     let myCrust = this.crust;
     let pizzaNo = this.amt;
-    if(mySize = "large"){
+    if(mySize === "large"){
         tops[0][1] = 120;
         tops[1][1] = 90;
         tops[2][1] = 140;
@@ -167,6 +167,6 @@ function reset() {
 }
 
 function myCheckout(){
-
+    
 
 }
