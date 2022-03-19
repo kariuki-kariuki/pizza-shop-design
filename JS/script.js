@@ -37,19 +37,20 @@ console.log(`The total price is: ${order1.price()}`)
 
 function myModal(pizzaType){
     if(pizzaType === 'medium'){
-        calculate('Medium Size')
+        calculate('Medium Size', pizzaType)
     } else if (pizzaType === 'small'){
-        calculate('Small Size');
+        calculate('Small Size', pizzaType);
     } else {
-        calculate('Large Size');
+        calculate('Large Size', pizzaType);
     }
 }
-function calculate(param){
+function calculate(param, param2){
     // document.getElementById("modal").style.display = "block";
     $("#modal").append(
         '<div class="w3-modal-content pb-4"> ' +
             '<header class="w3-main-container w3-teal">' +
                 '<h1>' + param +'</h1>' +
+                '<p id="datatype">'+ param2 + '</p>' +
                 '<span id = "myHide"'+
                     'class="w3-button w3-display-topright">&times;</span>'+
             '</header>'+
@@ -74,14 +75,15 @@ function calculate(param){
                         '</select>'+
 
                         '<label for="quantity">Choose Quantity</label>'+
-                        '<input type="number" class="w3-input w3-border" placeholder="choose quantity">'+
+                        '<input type="number" class="w3-input w3-border" placeholder="choose quantity" required>'+
                             '<br>'+
-                            '</div>'+
-
-                            '<input type="submit" value="Order" class="btn btn-primary">'+
-                            '</form>'+
                     '</div>'+
-            '</div>'
+
+                        '<input type="submit" value="Order" class="btn btn-primary">'+
+                '</form>'+
+            '</div>'+
+        '</div>'
+
     );
     $("#modal").show("slow");
     $("#myHide").click(() => {
