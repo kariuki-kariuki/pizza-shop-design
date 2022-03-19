@@ -93,6 +93,10 @@ function calculate(param, param2){
         let toppingVal = $("#toppings").val();
         let pizzaValue = $('#datatype').text();
         console.log(`You are odering ${pizzaValue} sized pizza and toping Value is ${toppingVal}`)
+
+        
+        
+        reset()
     })
 
 
@@ -100,9 +104,10 @@ function calculate(param, param2){
         $("#modal").empty();
         $("#modal").hide("slow");
     })
-
 }
-
+function reset(){
+    $("input").val("");
+}
 // $('form#myform').submit( event => {
 //     event.preventDefault();
 //     let toppingVal = $("#toppings").val();
