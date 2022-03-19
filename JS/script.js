@@ -55,10 +55,10 @@ function calculate(param, param2){
                     'class="w3-button w3-display-topright">&times;</span>'+
             '</header>'+
             '<div class="w3-container">'+
-                '<form class="w3-container">'+
+                '<form class="w3-container" id="myform">'+
                     '<div class="w3-main-container">'+
                         '<label for="toppings">Choose Topping</label>'+
-                        '<select name="toppings" class="w3-input" id="toppings">'+
+                        '<select name="toppings" id = "toppings" class="w3-input" id="toppings">'+
                             '<option value="0">Red Pepper</option>'+
                             '<option value="1">Cauli Flower</option>'+
                             '<option value="2">Tomatoes</option>'+
@@ -68,14 +68,14 @@ function calculate(param, param2){
 
                     '<div class="w3-main-container">'+
                         '<label for="crust">Choose crust</label>'+
-                        '<select class="w3-input" name="crust" id="crust">'+
+                        '<select class="w3-input" id = "crust" name="crust" id="crust">'+
                             '<option value="0">Cripsy</option>'+
                             '<option value="1">Stuffed</option>'+
                             '<option value="2">Gluten-Free</option>'+
                         '</select>'+
 
                         '<label for="quantity">Choose Quantity</label>'+
-                        '<input type="number" class="w3-input w3-border" placeholder="choose quantity" required>'+
+                        '<input type="number" class="w3-input w3-border" id = "quantity" placeholder="choose quantity" required>'+
                             '<br>'+
                     '</div>'+
 
@@ -86,9 +86,26 @@ function calculate(param, param2){
 
     );
     $("#modal").show("slow");
+
+
+    $('form#myform').submit(event => {
+        event.preventDefault();
+        let toppingVal = $("#toppings").val();
+        let pizzaValue = $('#datatype').text();
+        console.log(`You are odering ${pizzaValue} sized pizza and toping Value is ${toppingVal}`)
+    })
+
+
     $("#myHide").click(() => {
         $("#modal").empty();
         $("#modal").hide("slow");
     })
 
 }
+
+// $('form#myform').submit( event => {
+//     event.preventDefault();
+//     let toppingVal = $("#toppings").val();
+//     let pizzaValue = $('#datatype').text();
+//     console.log(`You are odering ${pizzaValue} and toping Value is ${pizzaValue}`)
+// })
