@@ -55,6 +55,7 @@ function myModal(pizzaType) {
 function calculate(param, param2) {
     // document.getElementById("modal").style.display = "block";
     // $("#tbody").empty();
+    console.log(param, param2)
     $("#modal").append(
         '<div class="w3-modal-content col-sm-6"> ' +
         '<header class="w3-main-container text-center bg-dark">' +
@@ -106,9 +107,9 @@ function calculate(param, param2) {
         let crustVal = $("#crust").val();
         let quantityVal = $("#quantity").val();
         let pizzaData;
-        if (toppingVal === 'small') {
+        if (param2 === 'small') {
             pizzaData = 0;
-        } else if (toppingVal === 'large') {
+        } else if (param2 === 'medium') {
             pizzaData = 1;
         } else {
             pizzaData = 2;
@@ -119,18 +120,6 @@ function calculate(param, param2) {
         console.log(mypizza.price());
         items.push(mypizza);
         console.log(items)
-        // for(let i = 0; i < items.length; i++){
-        //     $("#tbody").append(
-        //         '<tr>' +
-        //         '<td>' + i.index() + '</td>' +
-        //         '<td><img src="/assets/pizza-ga7513f267_640.jpg" alt="" class="img-fluid tdimg"></td>' +
-        //         '<td>' + pizzaSize[items[i].size][0] + '</td>' +
-        //         '<td>' + tops[items[i].topping][0] + '</td>' +
-        //         '<td>' + crust[items[i].crust][0] + '</td>' +
-        //         '<td>' + items[i].price() + '</td>' +
-        //         '<td><input type="checkbox" name="check" id="check" value= "' + items[i].price() + '"></td>' +
-        //         '</tr>')
-        // }
 
         items.forEach((item, index) => {
         
@@ -146,19 +135,6 @@ function calculate(param, param2) {
                 '</tr>')
         });
 
-        // $("#tbody").append(
-        //     '<tr>'+
-        //         '<td>1</td>'+
-        //         '<td><img src="/assets/pizza-ga7513f267_640.jpg" alt="" class="img-fluid tdimg"></td>'+
-        //         '<td>' + pizzaValue +'</td>'+
-        //         '<td>' + tops[toppingVal][0] +'</td>'+
-        //         '<td>' + crust[crustVal][0] +'</td>'+
-        //         '<td>' + mypizza.price() + '</td>'+
-        //         '<td><input type="checkbox" name="check" id="check" value= "' + mypizza.price() + '"></td>'+
-        //     '</tr>'
-
-        // );
-
         reset();
     })
 
@@ -171,9 +147,3 @@ function calculate(param, param2) {
 function reset() {
     $("input#quantity").val("");
 }
-// $('form#myform').submit( event => {
-//     event.preventDefault();
-//     let toppingVal = $("#toppings").val();
-//     let pizzaValue = $('#datatype').text();
-//     console.log(`You are odering ${pizzaValue} and toping Value is ${pizzaValue}`)
-// })
