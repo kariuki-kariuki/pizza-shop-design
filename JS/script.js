@@ -32,9 +32,6 @@ let order1 = new Pizza (1, 2, 0, 5);
 console.log(`The total price is: ${order1.price()}`)
 
 
-
-
-
 function myModal(pizzaType){
     if(pizzaType === 'medium'){
         calculate('Medium Size', pizzaType)
@@ -47,16 +44,16 @@ function myModal(pizzaType){
 function calculate(param, param2){
     // document.getElementById("modal").style.display = "block";
     $("#modal").append(
-        '<div class="w3-modal-content pb-4"> ' +
-            '<header class="w3-main-container w3-teal">' +
+        '<div class="w3-modal-content col-sm-6"> ' +
+            '<header class="w3-main-container text-center bg-dark">' +
                 '<h1>' + param +'</h1>' +
                 '<p id="datatype">'+ param2 + '</p>' +
                 '<span id = "myHide"'+
                     'class="w3-button w3-display-topright">&times;</span>'+
             '</header>'+
-            '<div class="w3-container">'+
-                '<form class="w3-container" id="myform">'+
-                    '<div class="w3-main-container">'+
+            '<div class="w3-main-container pb-4 base-1">'+
+                '<form class="w3-container base-0" id="myform">'+
+                    '<div class="w3-main-container">'+ "<br>" +
                         '<label for="toppings">Choose Topping</label>'+
                         '<select name="toppings" id = "toppings" class="w3-input" id="toppings">'+
                             '<option value="0">Red Pepper</option>'+
@@ -66,13 +63,13 @@ function calculate(param, param2){
                         '</select>'+
                     '</div>'+
 
-                    '<div class="w3-main-container">'+
+                    '<div class="w3-main-container">'+ "<br>" +
                         '<label for="crust">Choose crust</label>'+
                         '<select class="w3-input" id = "crust" name="crust" id="crust">'+
                             '<option value="0">Cripsy</option>'+
                             '<option value="1">Stuffed</option>'+
                             '<option value="2">Gluten-Free</option>'+
-                        '</select>'+
+                        '</select>'+ "<br>" +
 
                         '<label for="quantity">Choose Quantity</label>'+
                         '<input type="number" class="w3-input w3-border" id = "quantity" placeholder="choose quantity" required>'+
@@ -94,7 +91,7 @@ function calculate(param, param2){
         let pizzaValue = $('#datatype').text();
         console.log(`You are odering ${pizzaValue} sized pizza and toping Value is ${toppingVal}`)
 
-        
+
         
         reset()
     })
@@ -106,7 +103,7 @@ function calculate(param, param2){
     })
 }
 function reset(){
-    $("input").val("");
+    $("input#quantity").val("");
 }
 // $('form#myform').submit( event => {
 //     event.preventDefault();
