@@ -8,9 +8,9 @@ function Pizza(size, topings, crust, amt) {
 }
 
 let pizzaSize = [
-    ['small', 700],
-    ['medium', 900],
-    ['large', 1200]
+    ['Small', 700],
+    ['Medium', 900],
+    ['Large', 1200]
 ]
 
 let tops = [
@@ -25,6 +25,7 @@ let crust = [
     ["Stuffed", 70],
     ["Gluten Free", 100]
 ]
+let pictures = ["/assets/pizza-g538ad5b47_640.jpg", "/assets/italian-cuisine-g64e6fe569_640.jpg", "/assets/pizza-ga7513f267_640.jpg"]
 
 let items = [];
 
@@ -126,7 +127,7 @@ function calculate(param, param2) {
             $("#tbody").append(
                 '<tr>' +
                 '<td>' + (index + 1) + '</td>' +
-                '<td><img src="/assets/pizza-ga7513f267_640.jpg" alt="" class="img-fluid tdimg"></td>' +
+                '<td><img src="' + pictures[item.size]  +'" alt="" class="img-fluid tdimg"></td>' +
                 '<td>' + pizzaSize[item.size][0] + '</td>' +
                 '<td>' + tops[item.topping][0] + '</td>' +
                 '<td>' + crust[item.crust][0] + '</td>' +
