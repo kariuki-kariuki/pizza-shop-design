@@ -35,6 +35,18 @@ Pizza.prototype.price = function () {
     let myTop = this.size;
     let myCrust = this.crust;
     let pizzaNo = this.amt;
+    if(mySize = "large"){
+        tops[0][1] = 120;
+        tops[1][1] = 90;
+        tops[2][1] = 140;
+        tops[3][1] = 170;
+    } else if(mySize === 'medium'){
+        tops[0][1] = 110;
+        tops[1][1] = 80;
+        tops[2][1] = 130;
+        tops[3][1] = 160;
+    }
+
     let myPrice = (pizzaSize[mySize][1] + tops[myTop][1] + crust[myCrust][1]) * pizzaNo;
     return myPrice
 }
@@ -53,6 +65,11 @@ function myModal(pizzaType) {
         calculate('Large Size', pizzaType);
     }
 }
+
+
+
+
+
 function calculate(param, param2) {
     // document.getElementById("modal").style.display = "block";
     // $("#tbody").empty();
@@ -125,15 +142,15 @@ function calculate(param, param2) {
         items.forEach((item, index) => {
         
             $("#tbody").append(
-                '<tr>' +
+                '<tr id="' + (index + 1) + '">' +
                 '<td>' + (index + 1) + '</td>' +
                 '<td><img src="' + pictures[item.size]  +'" alt="" class="img-fluid tdimg"></td>' +
                 '<td>' + pizzaSize[item.size][0] + '</td>' +
                 '<td>' + tops[item.topping][0] + '</td>' +
                 '<td>' + crust[item.crust][0] + '</td>' +
                 '<td>' + item.price() + '</td>' +
-                '<td><input type="checkbox" name="check" id="check" value= "' + item.price() + '"></td>' +
-                '</tr>')
+                '<td><input type="checkbox" name="check" id="check' + (index + 1) +'" value= "' + item.price() + '"></td>' +
+                '</tr>');
         });
 
         reset();
@@ -147,4 +164,9 @@ function calculate(param, param2) {
 }
 function reset() {
     $("input#quantity").val("");
+}
+
+function myCheckout(){
+
+
 }
