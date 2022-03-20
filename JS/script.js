@@ -71,9 +71,6 @@ function myModal(pizzaType) {
 }
 
 
-
-
-
 function calculate(param, param2) {
     // document.getElementById("modal").style.display = "block";
     // $("#tbody").empty();
@@ -176,7 +173,6 @@ function reset() {
 }  
 
 
-
 $(document).ready(()=>{
 
    
@@ -195,10 +191,6 @@ $(document).ready(()=>{
             }
         })
         console.log(checkedItems)
-        
-        // checkedItems.forEach( myitem => {
-        //     prices.push(parseInt($("#p" + myitem).text()))
-        // })
 
         console.log(prices)
     });
