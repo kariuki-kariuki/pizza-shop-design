@@ -29,6 +29,10 @@ let pictures = ["/assets/pizza-g538ad5b47_640.jpg", "/assets/italian-cuisine-g64
 
 let items = [];
 
+let prices = []
+
+let checkedItems = [];
+
 
 Pizza.prototype.price = function () {
     let mySize = this.size;
@@ -140,18 +144,22 @@ function calculate(param, param2) {
         console.log(items)
 
         items.forEach((item, index) => {
-        
+            
             $("#tbody").append(
-                '<tr id="' + (index + 1) + '">' +
-                '<td>' + (index + 1) + '</td>' +
+                '<tr id="check' + (index + 1) + '">' +
+                // '<td>'+ (index + 1) + '</td>' +
                 '<td><img src="' + pictures[item.size]  +'" alt="" class="img-fluid tdimg"></td>' +
                 '<td>' + pizzaSize[item.size][0] + '</td>' +
                 '<td>' + tops[item.topping][0] + '</td>' +
                 '<td>' + crust[item.crust][0] + '</td>' +
-                '<td>' + item.price() + '</td>' +
-                '<td><input type="checkbox" name="check" id="check' + (index + 1) +'" value= "' + item.price() + '"></td>' +
+                '<td>' + '<p id= "p' + (index + 1) +'">' + item.price() + "</p>" + '</td>' +
+                '<td><input type="checkbox" name="check" id="' + (index + 1) +'" value= "' + (index + 1) + '"></td>' +
                 '</tr>');
         });
+
+        checkedItems.forEach((disabled) =>{
+            $("tr#check" + disabled).empty()
+        })
 
         reset();
     })
@@ -162,11 +170,36 @@ function calculate(param, param2) {
         $("#modal").hide("slow");
     })
 }
+
 function reset() {
     $("input#quantity").val("");
-}
+}  
 
-function myCheckout(){
-    let delivery = prompt("Do you want your food to be deliverd?")
 
-}
+
+$(document).ready(()=>{
+
+   
+
+    $("#checkbtn").click(() => {
+        $("input[type=checkbox").each( function(){
+            if(this.checked){
+                checkedItems.push($(this).val());
+                checkedItems.forEach(myitem => {
+                    prices.push(items[myitem -1])
+                    $("#" + myitem).attr("disabled", true);
+                    $("#check" + myitem).empty();
+                })
+            } else {
+                
+            }
+        })
+        console.log(checkedItems)
+        
+        // checkedItems.forEach( myitem => {
+        //     prices.push(parseInt($("#p" + myitem).text()))
+        // })
+
+        console.log(prices)
+    });
+})
