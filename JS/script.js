@@ -34,6 +34,7 @@ let checkedId = []
 let checkedItems = [];
 
 
+
 Pizza.prototype.price = function () {
     let mySize = this.size;
     let myTop = this.size;
@@ -198,9 +199,11 @@ $(document).ready(() => {
             }
 
         })
+        let total = 0;
 
         checkedItems.forEach(p1 => {
 
+            total += p1.price();
             $("#mybody").append(
                 '<tr>' +
                 '<td class="align-middle"><img src="' + pictures[p1.size] + '" alt="" class="img-fluid myimg2"></td>' +
@@ -210,6 +213,9 @@ $(document).ready(() => {
                 '</tr> '
             )
         })
+
+        $(".total").text(total)
+
         console.log("The checked items", checkedItems)
 
         // console.log("The checkedout pxxa", prices)
