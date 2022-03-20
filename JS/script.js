@@ -39,12 +39,12 @@ Pizza.prototype.price = function () {
     let myTop = this.size;
     let myCrust = this.crust;
     let pizzaNo = this.amt;
-    if(mySize === "large"){
+    if (mySize === "large") {
         tops[0][1] = 120;
         tops[1][1] = 90;
         tops[2][1] = 140;
         tops[3][1] = 170;
-    } else if(mySize === 'medium'){
+    } else if (mySize === 'medium') {
         tops[0][1] = 110;
         tops[1][1] = 80;
         tops[2][1] = 130;
@@ -141,22 +141,24 @@ function calculate(param, param2) {
         console.log(items)
 
         items.forEach((item, index) => {
-            
+
             $("#tbody").append(
                 '<tr id="check' + (index + 1) + '">' +
                 // '<td>'+ (index + 1) + '</td>' +
-                '<td><img src="' + pictures[item.size]  +'" alt="" class="img-fluid tdimg"></td>' +
+                '<td><img src="' + pictures[item.size] + '" alt="" class="img-fluid tdimg"></td>' +
                 '<td>' + pizzaSize[item.size][0] + '</td>' +
                 '<td>' + tops[item.topping][0] + '</td>' +
                 '<td>' + crust[item.crust][0] + '</td>' +
-                '<td>' + '<p id= "p' + (index + 1) +'">' + item.price() + "</p>" + '</td>' +
-                '<td><input type="checkbox" name="check" id="' + (index + 1) +'" value= "' + (index + 1) + '"></td>' +
+                '<td>' + '<p id= "p' + (index + 1) + '">' + item.price() + "</p>" + '</td>' +
+                '<td><input type="checkbox" name="check" id="' + (index + 1) + '" value= "' + (index + 1) + '"></td>' +
                 '</tr>');
         });
 
-        checkedItems.forEach((disabled) =>{
-            $("tr#check" + disabled).empty()
-        })
+        // checkedItems.forEach((disabled) => {
+        //     $("tr#check" + disabled).attr("disabled", true)
+        //     // console.log(disabled)
+        //     $("tr#check" + disabled).empty()
+        // })
 
         reset();
     })
@@ -170,28 +172,48 @@ function calculate(param, param2) {
 
 function reset() {
     $("input#quantity").val("");
-}  
+}
 
 
-$(document).ready(()=>{
+$(document).ready(() => {
 
-   
+
 
     $("#checkbtn").click(() => {
-        $("input[type=checkbox").each( function(){
-            if(this.checked){
-                checkedItems.push($(this).val());
-                checkedItems.forEach(myitem => {
-                    prices.push(items[myitem -1])
-                    $("#" + myitem).attr("disabled", true);
-                    $("#check" + myitem).empty();
-                })
-            } else {
-                
-            }
-        })
-        console.log(checkedItems)
+        $("#mybody").empty();
 
-        console.log(prices)
+        $("input[type=checkbox").each(function () {
+            if (this.checked) {
+                checkedItems.push(items[$(this).val() -1]);
+                // checkedItems.forEach(myitem => {
+                    // prices.push(items[myitem - 1])
+                    // $("#" + myitem).attr("disabled", true);
+                    // $("#check" + myitem).empty();
+
+                    checkedItems.forEach(p1 => {
+
+                        $("#mybody").append(
+                            '<tr>' +
+                            '<td class="align-middle"><img src="' + pictures[p1.size] + '" alt="" class="img-fluid myimg2"></td>' +
+                            '<td class="align-middle">' + pizzaSize[p1.size][0] + '</td> ' +
+                            '<td class="align-middle">' + p1.amt + '</td> ' +
+                            '<td class="align-middle"> ' + p1.price() + '</td> ' +
+                            '</tr> '
+                        )
+                    })
+                // })
+
+            } else {
+
+            }
+
+            
+
+
+        })
+        console.log("The checked items", checkedItems)
+
+        console.log("The checkedout pxxa", prices)
     });
 })
+
