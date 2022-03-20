@@ -167,6 +167,6 @@ function reset() {
 }
 
 function myCheckout(){
-    
+    let delivery = prompt("Do you want your food to be deliverd?")
 
 }

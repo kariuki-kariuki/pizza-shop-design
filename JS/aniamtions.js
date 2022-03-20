@@ -25,12 +25,12 @@ let index = 0;
 setInterval(function showChar() {
     let elem = document.getElementById('demo');
     let i = -1;
-    let myText = "We make  deliveries around Nairobi and all it surb-urbs area";
+    let myText = "We make  deliveries around Nairobi and all it's surb-urbs area";
 
     (function start() {
         if (i < myText.length) {
             demo.innerHTML = demo.innerHTML + myText.charAt(i++);
-            setTimeout(start, 150);
+            setTimeout(start, 130);
         }
     })();
     demo.innerHTML = "";
