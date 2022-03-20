@@ -25,7 +25,7 @@ let crust = [
     ["Stuffed", 70],
     ["Gluten Free", 100]
 ]
-let pictures = ["./assets/pizza-g538ad5b47_640.jpg", "./assets/italian-cuisine-g64e6fe569_640.jpg", "./assets/pizza-ga7513f267_640.jpg"]
+let pictures = ["assets/pizza-g538ad5b47_640.jpg", "assets/italian-cuisine-g64e6fe569_640.jpg", "assets/pizza-ga7513f267_640.jpg"]
 
 let items = [];
 
