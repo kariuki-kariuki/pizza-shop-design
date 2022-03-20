@@ -191,7 +191,7 @@ $(document).ready(() => {
 
                 $("#check" + $(this).val()).empty();
 
-                
+
                 // })
 
             } else {
@@ -220,5 +220,19 @@ $(document).ready(() => {
 
         // console.log("The checkedout pxxa", prices)
     });
+
+    $("#deliverybtn").click(() => {
+        $("#delivery").show();
+    });
+    let locale;
+
+    $("#confirm").click(() => {
+        locale = $("#location").val();
+        var tatal2 = parseInt($(".total").text()) + 50;
+        $("#locales").text(tatal2)
+
+    })
+
+
 })
 
