@@ -29,7 +29,7 @@ let pictures = ["/assets/pizza-g538ad5b47_640.jpg", "/assets/italian-cuisine-g64
 
 let items = [];
 
-let prices = []
+let checkedId = []
 
 let checkedItems = [];
 
@@ -154,11 +154,11 @@ function calculate(param, param2) {
                 '</tr>');
         });
 
-        // checkedItems.forEach((disabled) => {
-        //     $("tr#check" + disabled).attr("disabled", true)
-        //     // console.log(disabled)
-        //     $("tr#check" + disabled).empty()
-        // })
+        checkedId.forEach((disabled) => {
+            $("tr#check" + disabled).attr("disabled", true)
+            // console.log(disabled)
+            $("tr#check" + disabled).empty()
+        })
 
         reset();
     })
@@ -178,42 +178,41 @@ function reset() {
 $(document).ready(() => {
 
 
-
     $("#checkbtn").click(() => {
         $("#mybody").empty();
 
         $("input[type=checkbox").each(function () {
             if (this.checked) {
-                checkedItems.push(items[$(this).val() -1]);
-                // checkedItems.forEach(myitem => {
-                    // prices.push(items[myitem - 1])
-                    // $("#" + myitem).attr("disabled", true);
-                    // $("#check" + myitem).empty();
+                checkedItems.push(items[$(this).val() - 1]);
+                checkedId.push($(this).val())
+                $("#" + $(this).val()).attr("disabled", true);
+                // $("#check" + myitem).empty();
 
-                    checkedItems.forEach(p1 => {
+                $("#check" + $(this).val()).empty();
 
-                        $("#mybody").append(
-                            '<tr>' +
-                            '<td class="align-middle"><img src="' + pictures[p1.size] + '" alt="" class="img-fluid myimg2"></td>' +
-                            '<td class="align-middle">' + pizzaSize[p1.size][0] + '</td> ' +
-                            '<td class="align-middle">' + p1.amt + '</td> ' +
-                            '<td class="align-middle"> ' + p1.price() + '</td> ' +
-                            '</tr> '
-                        )
-                    })
+                
                 // })
 
             } else {
 
             }
 
-            
+        })
 
+        checkedItems.forEach(p1 => {
 
+            $("#mybody").append(
+                '<tr>' +
+                '<td class="align-middle"><img src="' + pictures[p1.size] + '" alt="" class="img-fluid myimg2"></td>' +
+                '<td class="align-middle">' + pizzaSize[p1.size][0] + '</td> ' +
+                '<td class="align-middle">' + p1.amt + '</td> ' +
+                '<td class="align-middle"> ' + p1.price() + '</td> ' +
+                '</tr> '
+            )
         })
         console.log("The checked items", checkedItems)
 
-        console.log("The checkedout pxxa", prices)
+        // console.log("The checkedout pxxa", prices)
     });
 })
 
