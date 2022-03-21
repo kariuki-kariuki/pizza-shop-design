@@ -198,7 +198,7 @@
     </div>
 
     <div class="container-fluid text-white bg-dark p-5">
-        <div class="container bg-black text-white">
+        <div class="container-fluid bg-black text-white">
             <header class="container pt-3 pb-3">
                 <button class="btn btn-success" id="deliverybtn">Delivery</button>
                 <buttton class="btn btn-primary float-right right mr-3" id="checkbtn">Checkout</buttton>
@@ -235,7 +235,7 @@
                             <tr>
                                 <th>Pizza</th>
                                 <th>Size</th>
-                                <th>Number</th>
+                                <th>Amount</th>
                                 <th>Total</th>
                             </tr>
                         </thead>
@@ -245,21 +245,24 @@
                         </tbody>
                     </table>
                     <div id="delivery" class="w3-modal">
-                        <div class="w3-modal-content w3-text-black col-sm-4 w3-card">
+                        <div class="w3-modal-content w3-text-white col-sm-4 w3-card bg-dark ">
                             <div class="w3-container">
                                 <span onclick="document.getElementById('delivery').style.display='none'"
                                     class="w3-button w3-display-topright">&times;</span>
                                 <h3>Enter Location</h3>
-                                <input type="text" class="w3-input" id="location" required>
+                                <hr>
+                                <input type="text" class="w3-input" id="location" required placeholder="Your Location">
                                 
+                                <hr>
 
-                                <p>We have custormer service Delivery charg of Ksh 50/=</p>
-                                <button class="btn btn-primary" id="confirm">Confirm</button>
+                                <p>Delivery fee is Ksh 50/=</p>
+                                <p>Location can not be changed.</p>
+                                <button  class="btn btn-success mb-3" id="confirm">Confirm</button>
                             </div>
                         </div>
                     </div>
                     <p>Total price <span class="total"></span></p>
-                    <p>Your goods will be delivered at: <span id="locales"></span></p>
+                    <p>Your goods will be delivered at: <span id="locales">Selected at Destination</span></p>
                 </div>
             </div>
         

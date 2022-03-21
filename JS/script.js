@@ -202,7 +202,8 @@ $(document).ready(() => {
         if (checkedItems === []) {
             alert("Empty");
         }
-        console.log(checkedItems)
+
+        
         let total = 0;
 
         checkedItems.forEach(p1 => {
