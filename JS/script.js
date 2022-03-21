@@ -33,6 +33,8 @@ let checkedId = []
 
 let checkedItems = [];
 
+let clicked = "";
+
 
 
 Pizza.prototype.price = function () {
@@ -213,8 +215,14 @@ $(document).ready(() => {
                 '</tr> '
             )
         })
-
         $(".total").text(total)
+
+        if(clicked === "clicked"){
+            let total3 ;
+            total3 = total + 50;
+            $(".total").text(total3)
+        }
+        console.log(total)
 
         console.log("The checked items", checkedItems)
 
@@ -222,14 +230,30 @@ $(document).ready(() => {
     });
 
     $("#deliverybtn").click(() => {
-        $("#delivery").show();
+        if (clicked === "clicked" || $(".total").text() === ""){
+            alert("Nothing on Checked Out")
+        } else {
+            $("#delivery").show();
+        }
     });
     let locale;
 
     $("#confirm").click(() => {
+        clicked = "clicked";
         locale = $("#location").val();
-        var tatal2 = parseInt($(".total").text()) + 50;
-        $("#locales").text(tatal2)
+        if ($(".total").text() === ""){
+            alert("No deliveries to be made");
+            $("#delivery").hide("slow");
+        } else{
+            let total2 = parseInt($(".total").text()) + 50;
+            $(".total").text(total2)
+            $("#locales").text(locale)
+            $("#location").val("");
+
+        }
+        
+
+        
 
     })
 
