@@ -78,8 +78,8 @@
 .text{
     position: absolute;
     bottom: -20px;
-    right: 40px;
-    font-size: xx-large;
+    right: 20px;
+    font-size: x-large;
     font-family: 'Smokum', cursive;
     width: fit-content;
 }
