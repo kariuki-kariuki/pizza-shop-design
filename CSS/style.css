@@ -60,6 +60,7 @@
 .header a:hover{
     background-color: wheat;
     color: aqua;
+    transition: 1.5s;
 }
 
 

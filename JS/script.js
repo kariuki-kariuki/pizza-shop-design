@@ -11,20 +11,21 @@ let pizzaSize = [
     ['Small', 700],
     ['Medium', 900],
     ['Large', 1200]
-]
+];
 
 let tops = [
     ["Red Paper", 100],
     ["Cauli Flower", 70],
     ["Tomatoes ", 120],
     ["Butternut Squash", 150]
-]
+];
 
 let crust = [
     ["Cripsy", 50],
     ["Stuffed", 70],
     ["Gluten Free", 100]
-]
+];
+
 let pictures = ["assets/pizza-g538ad5b47_640.jpg", "assets/italian-cuisine-g64e6fe569_640.jpg", "assets/pizza-ga7513f267_640.jpg"]
 
 let items = [];
@@ -162,13 +163,13 @@ function calculate(param, param2) {
         })
 
         reset();
-    })
+    });
 
 
     $("#myHide").click(() => {
         $("#modal").empty();
         $("#modal").hide("slow");
-    })
+    });
 }
 
 function reset() {
@@ -216,7 +217,7 @@ $(document).ready(() => {
             )
             $(".total").text(total)
 
-        })
+        });
 
         if(clicked === "clicked"){
             let total3 ;
@@ -251,7 +252,6 @@ $(document).ready(() => {
 
         }     
 
-    })
+    });
 
-
-})
+});
