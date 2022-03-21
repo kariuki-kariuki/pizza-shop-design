@@ -50,14 +50,17 @@
     color: white;
     font-size: 30px;
     display: inline-block;
-    padding: 10px;
-    /* background-color: yellow; */
-    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 6px;
     
 }
-.header {
-    padding-top: 30px;
+
+.header a:hover{
+    background-color: wheat;
+    color: aqua;
 }
+
 
 .info{
     height: 40vh;

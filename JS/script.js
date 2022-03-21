@@ -178,12 +178,9 @@ function reset() {
 
 $(document).ready(() => {
 
-
     $("#checkbtn").click(() => {
         $("#mybody").empty();
         
-
-
         $("input[type=checkbox").each(function () {
             if (this.checked) {
 
@@ -203,7 +200,7 @@ $(document).ready(() => {
             alert("Empty");
         }
 
-        
+
         let total = 0;
 
         checkedItems.forEach(p1 => {
