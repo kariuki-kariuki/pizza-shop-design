@@ -22,7 +22,7 @@ let index = 0;
 })();
 
 
-setInterval(function showChar() {
+(function showChar() {
     let elem = document.getElementById('demo');
     let i = -1;
     let myText = "We make  deliveries around Nairobi and all it's surb-urbs area";
@@ -35,7 +35,7 @@ setInterval(function showChar() {
     })();
     demo.innerHTML = "";
 
-}, 12000);
+})();
 
 (function showChar2() {
     let x = -1;
