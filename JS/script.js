@@ -58,10 +58,11 @@ Pizza.prototype.price = function () {
     return myPrice
 }
 
-let order1 = new Pizza(0, 2, 0, 1);
 
-console.log(`The total price is: ${order1.price()}`)
 
+
+
+// UI Logic
 
 function myModal(pizzaType) {
     if (pizzaType === 'medium') {
@@ -136,18 +137,16 @@ function calculate(param, param2) {
         } else {
             pizzaData = 2;
         }
-        console.log(`You are odering ${pizzaData} sized pizza and toping Value is ${toppingVal} quantity ${quantityVal} crust ${crustVal}`)
 
         let mypizza = new Pizza(pizzaData, toppingVal, crustVal, quantityVal);
-        console.log(mypizza.price());
+
         items.push(mypizza);
-        console.log(items)
 
         items.forEach((item, index) => {
 
             $("#tbody").append(
                 '<tr id="check' + (index + 1) + '">' +
-                // '<td>'+ (index + 1) + '</td>' +
+                '<td>'+ (index + 1) + '</td>' +
                 '<td><img src="' + pictures[item.size] + '" alt="" class="img-fluid tdimg"></td>' +
                 '<td>' + pizzaSize[item.size][0] + '</td>' +
                 '<td class= "d-none d-md-block d-lg-block d-xl-block">' + tops[item.topping][0] + '</td>' +
@@ -159,7 +158,6 @@ function calculate(param, param2) {
 
         checkedId.forEach((disabled) => {
             $("tr#check" + disabled).attr("disabled", true)
-            // console.log(disabled)
             $("tr#check" + disabled).empty()
         })
 
@@ -189,13 +187,7 @@ $(document).ready(() => {
                 checkedItems.push(items[$(this).val() - 1]);
                 checkedId.push($(this).val())
                 $("#" + $(this).val()).attr("disabled", true);
-                // $("#check" + myitem).empty();
-
                 $("#check" + $(this).val()).empty();
-
-
-                // })
-
             } else {
 
             }
@@ -222,11 +214,8 @@ $(document).ready(() => {
             total3 = total + 50;
             $(".total").text(total3)
         }
-        console.log(total)
 
-        console.log("The checked items", checkedItems)
 
-        // console.log("The checkedout pxxa", prices)
     });
 
     $("#deliverybtn").click(() => {
