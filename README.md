@@ -1,4 +1,4 @@
-# 
+# Palais Des Pizzas
 
 This is pizza shop website for ordering pizza 
 
@@ -30,7 +30,7 @@ Choose to get the food Delivered
 
 * HTML & CSS - For the page structure and styling
 * Bootsrap - Page responsiveness
-* Javascript - Page interactiveness
+* Javascript && jQuery - Page interactiveness
 
 ## References
 MDN documentation
