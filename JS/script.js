@@ -150,8 +150,8 @@ function calculate(param, param2) {
                 // '<td>'+ (index + 1) + '</td>' +
                 '<td><img src="' + pictures[item.size] + '" alt="" class="img-fluid tdimg"></td>' +
                 '<td>' + pizzaSize[item.size][0] + '</td>' +
-                '<td>' + tops[item.topping][0] + '</td>' +
-                '<td>' + crust[item.crust][0] + '</td>' +
+                '<td class= "d-none d-md-block d-lg-block d-xl-block">' + tops[item.topping][0] + '</td>' +
+                '<td class = "d-none d-md-block d-lg-block d-xl-block">' + crust[item.crust][0] + '</td>' +
                 '<td>' + '<p id= "p' + (index + 1) + '">' + item.price() + "</p>" + '</td>' +
                 '<td><input type="checkbox" name="check" id="' + (index + 1) + '" value= "' + (index + 1) + '"></td>' +
                 '</tr>');
