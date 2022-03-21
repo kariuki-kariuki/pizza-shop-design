@@ -181,18 +181,28 @@ $(document).ready(() => {
 
     $("#checkbtn").click(() => {
         $("#mybody").empty();
+        
+
 
         $("input[type=checkbox").each(function () {
             if (this.checked) {
+
                 checkedItems.push(items[$(this).val() - 1]);
                 checkedId.push($(this).val())
                 $("#" + $(this).val()).attr("disabled", true);
                 $("#check" + $(this).val()).empty();
+
             } else {
 
             }
+            
+        });
 
-        })
+
+        if (checkedItems === []) {
+            alert("Empty");
+        }
+        console.log(checkedItems)
         let total = 0;
 
         checkedItems.forEach(p1 => {
@@ -206,8 +216,9 @@ $(document).ready(() => {
                 '<td class="align-middle"> ' + p1.price() + '</td> ' +
                 '</tr> '
             )
+            $(".total").text(total)
+
         })
-        $(".total").text(total)
 
         if(clicked === "clicked"){
             let total3 ;
@@ -238,14 +249,11 @@ $(document).ready(() => {
             $(".total").text(total2)
             $("#locales").text(locale)
             $("#location").val("");
+            $("#delivery").hide("slow");
 
-        }
-        
-
-        
+        }     
 
     })
 
 
 })
-
