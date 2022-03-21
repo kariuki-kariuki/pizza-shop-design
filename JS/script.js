@@ -247,6 +247,7 @@ $(document).ready(() => {
             let total2 = parseInt($(".total").text()) + 50;
             $(".total").text(total2)
             $("#locales").text(locale)
+            alert("Your delivery will be sent To ==> " + locale)
             $("#location").val("");
             $("#delivery").hide("slow");
 
