@@ -89,7 +89,7 @@ function calculate(param, param2) {
         'class="w3-button w3-display-topright">&times;</span>' +
         '</header>' +
         '<div class="w3-main-container pb-4 base-1">' +
-        '<form class="w3-container base-0" id="myform">' +
+        '<form class="w3-container base-0 pb-4" id="myform">' +
         '<div class="w3-main-container">' + "<br>" +
         '<label for="toppings">Choose Topping</label>' +
         '<select name="toppings" id = "toppings" class="w3-input" id="toppings">' +

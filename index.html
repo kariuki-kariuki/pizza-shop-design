@@ -19,9 +19,9 @@
 
 </head>
 <body>
-    <div class="container-fluid w3-top  header p-2 bg-black d-flex justify-content-around">
+    <div class="container-fluid w3-top  header p-2 bg-black d-flex justify-content-around text-secondary">
         <a href="#home">Home</a>
-        <a href="#order">Order</a>
+        <a href="#order">Menu</a>
         <a href="#cart">cart</a>
         <a href="#about" class="d-none d-md-block d-lg-block d-xl-block">About</a>
     </div>
@@ -122,7 +122,7 @@
     <div class="container-fluid bg-black order" id="order">
         <div class="container">
             <header class="text-center">
-                <h2>Order Now</h2>
+                <h2>Our Menu</h2>
             </header>
             
             <div class="row ">
@@ -197,8 +197,9 @@
         </div>
     </div>
 
-    <div class="container-fluid text-white bg-dark p-5" id="cart">
-        <div class="container-fluid bg-black text-white">
+    <div class="container-fluid text-white bg-dark p-5 " id="cart">
+        <h3>Cart</h3>
+        <div class="container-fluid bg-black text-white cart">
             <header class="container pt-3 pb-3">
                 <button class="btn btn-success" id="deliverybtn">Delivery</button>
                 <buttton class="btn btn-primary float-right right " id="checkbtn">Checkout</buttton>
@@ -227,7 +228,7 @@
         <div class="w3-modals card bg-dark w3-text-white" id="modal">
             <div class="card bg-dark">
                 <div class="card-header">
-                    <h1>My Items</h1>
+                    <h3>My Items</h3>
                 </div>
                 <div class="card-body">
                     <table class="table text-white table-dark table-striped">
@@ -261,7 +262,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="container-fluid pt-3">
+                    <div class="container-fluid pt-3" id="about">
                         <p>Total price <span class="total"></span></p>
                         <p>Your goods will be delivered at: <span id="locales">Selected Destination</span></p>
                     </div>
@@ -270,7 +271,7 @@
         
         </div>
     </div>
-    <footer class="container-main  text-center text-white bg-dark p-2">
+    <footer class="container-main  text-center text-white bg-dark p-5">
         <hr>
         <p>All rights reserved || Martin Kariuki</p>
         <hr>
