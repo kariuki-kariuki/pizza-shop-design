@@ -43,6 +43,6 @@ MDN documentation
 * [live link](https://emkayint.github.io/palais-des-pizzas/)
 
 ## Contact Me
- * business.kariukimartin@gmail.com
+ * mkmartinoes@gmail.com
  * +254 742075647
 
