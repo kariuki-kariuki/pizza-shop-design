@@ -86,7 +86,7 @@ function calculate(param, param2) {
         '<h1>' + param + '</h1>' +
         '<p id="datatype">' + param2 + '</p>' +
         '<span id = "myHide"' +
-        'class="w3-button w3-display-topright">&times;</span>' +
+        'class="w3-button w3-display-topright bg-black">X</span>' +
         '</header>' +
         '<div class="w3-main-container pb-4 base-1">' +
         '<form class="w3-container base-0 pb-4" id="myform">' +
