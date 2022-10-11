@@ -25,7 +25,7 @@ let index = 0;
 (function showChar() {
     let elem = document.getElementById('demo');
     let i = -1;
-    let myText = "We make  deliveries around Nairobi and all it's surb-urbs area";
+    let myText = "Get the most mouth watering pizza";
 
     (function start() {
         if (i < myText.length) {
